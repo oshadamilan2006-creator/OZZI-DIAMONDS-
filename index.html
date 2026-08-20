@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OZZI DIAMONDS | Free Fire Top-Up</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --bg:#020817;
+  --card:#071b30;
+  --card2:#0a2740;
+  --blue:#00d9ff;
+  --purple:#7c3cff;
+  --pink:#d946ef;
+  --gold:#ffc928;
+  --green:#22c55e;
+  --white:#fff;
+  --muted:#a8bdd0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(0,217,255,.18),transparent 28%),
+    radial-gradient(circle at 90% 20%,rgba(124,60,255,.2),transparent 30%),
+    linear-gradient(180deg,#020611,#06182a 50%,#020817);
+  color:white;
+  min-height:100vh;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1100px,94%);
+  margin:auto;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(2,8,23,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(0,217,255,.2);
+}
+
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:55px;
+  height:55px;
+  border:2px solid var(--blue);
+  border-radius:17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  color:var(--blue);
+  box-shadow:0 0 22px rgba(0,217,255,.45);
+  background:#020b17;
+}
+
+.brand h1{
+  font-size:21px;
+  letter-spacing:2px;
+}
+
+.brand small{
+  display:block;
+  color:var(--blue);
+  font-size:10px;
+  letter-spacing:3px;
+  margin-top:5px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-weight:800;
+  border-radius:30px;
+  padding:13px 21px;
+  background:linear-gradient(90deg,#00bfff,#7c3cff,#d946ef);
+  box-shadow:0 0 20px rgba(124,60,255,.4);
+}
+
+/* HERO */
+.hero{
+  margin:38px auto 25px;
+  padding:42px 30px;
+  border:1px solid rgba(0,217,255,.25);
+  border-radius:32px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(124,60,255,.25),transparent 30%),
+    linear-gradient(135deg,#071b30,#06182a);
+  box-shadow:0 0 50px rgba(0,217,255,.08);
+  overflow:hidden;
+}
+
+.badge{
+  display:inline-block;
+  padding:9px 15px;
+  border:1px solid rgba(0,217,255,.35);
+  border-radius:30px;
+  color:#61eaff;
+  background:rgba(0,217,255,.08);
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.hero h2{
+  margin-top:22px;
+  font-size:clamp(42px,8vw,82px);
+  line-height:.95;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.hero h2 span{
+  color:transparent;
+  background:linear-gradient(90deg,#00d9ff,#368cff,#d946ef);
+  background-clip:text;
+  -webkit-background-clip:text;
+}
+
+.hero p{
+  margin-top:22px;
+  max-width:700px;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.whatsapp{
+  background:#101827;
+  border:1px solid #263247;
+}
+
+/* OFFER */
+.offer{
+  margin:20px 0 30px;
+  padding:16px;
+  border-radius:15px;
+  background:linear-gradient(90deg,#ef172c,#ff4b00,#ef172c);
+  box-shadow:0 0 25px rgba(255,50,0,.25);
+  text-align:center;
+  font-weight:900;
+}
+
+.offer span{
+  margin-left:8px;
+  background:#8c1320;
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+/* SECTION */
+.section-title{
+  margin:35px 0 17px;
+  font-size:26px;
+}
+
+.section-title span{
+  color:var(--blue);
+}
+
+/* UID */
+.uid-card{
+  padding:25px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#071d33,#08172a);
+  border:1px solid rgba(0,217,255,.18);
+}
+
+.uid-card label{
+  display:block;
+  color:#55e8ff;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.uid-row{
+  display:flex;
+  gap:10px;
+}
+
+input{
+  width:100%;
+  padding:16px;
+  border-radius:13px;
+  border:1px solid #31516e;
+  background:#020b17;
+  color:white;
+  outline:none;
+  font-size:16px;
+}
+
+input:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 15px rgba(0,217,255,.15);
+}
+
+.check{
+  min-width:170px;
+  background:linear-gradient(90deg,#00c6ff,#7c3cff);
+}
+
+#uidResult{
+  margin-top:12px;
+  color:#64f7a2;
+  min-height:22px;
+}
+
+/* PACKAGES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.package{
+  position:relative;
+  padding:20px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#0a2942,#07172a);
+  border:1px solid rgba(124,60,255,.4);
+  transition:.25s;
+}
+
+.package:hover{
+  transform:translateY(-4px);
+  border-color:var(--blue);
+  box-shadow:0 10px 35px rgba(0,217,255,.12);
+}
+
+.package .tag{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:linear-gradient(90deg,#ffb000,#ff5b00);
+  color:#171000;
+  font-size:10px;
+  font-weight:900;
+  padding:5px 8px;
+  border-radius:7px;
+}
+
+.diamond-icon{
+  font-size:42px;
+  text-align:center;
+  margin:8px 0;
+  filter:drop-shadow(0 0 12px #00cfff);
+}
+
+.package h3{
+  text-align:center;
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.price{
+  text-align:center;
+  font-size:20px;
+  font-weight:900;
+  padding:10px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#d946ef,#6d28d9);
+}
+
+.qty{
+  display:flex;
+  margin-top:13px;
+  border:1px solid #6d28d9;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.qty button{
+  width:45px;
+  border:0;
+  background:#6d28d9;
+  color:white;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.qty input{
+  border:0;
+  border-radius:0;
+  text-align:center;
+  background:#10182c;
+  padding:10px;
+}
+
+/* ORDER */
+.order{
+  margin-top:30px;
+  padding:25px;
+  border-radius:25px;
+  background:linear-gradient(145deg,#0a2740,#061525);
+  border:1px solid rgba(0,217,255,.2);
+}
+
+.order-list{
+  margin:15px 0;
+}
+
+.order-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:9px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  color:#d8e5ef;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,.15);
+  font-size:23px;
+  font-weight:900;
+}
+
+.total strong{
+  color:#55e8ff;
+}
+
+/* PAYMENT */
+.payment{
+  margin-top:30px;
+  padding:25px;
+  border-radius:25px;
+  background:#071b30;
+  border:1px solid rgba(217,70,239,.3);
+}
+
+.payment-box{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:15px;
+}
+
+.pay{
+  padding:18px;
+  border-radius:15px;
+  text-align:center;
+  background:linear-gradient(135deg,#17263b,#0b1627);
+  border:1px solid #263c56;
+}
+
+.pay b{
+  display:block;
+  color:#61eaff;
+  margin-bottom:6px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:45px;
+  padding:30px 0;
+  text-align:center;
+  color:#8ba3b8;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-name{
+  color:white;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+/* FLOATING WHATSAPP */
+.float-wa{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:200;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#25d366;
+  color:white;
+  font-size:28px;
+  box-shadow:0 0 25px rgba(37,211,102,.45);
+}
+
+/* MOBILE */
+@media(max-width:650px){
+
+  .nav{
+    min-height:68px;
+  }
+
+  .brand h1{
+    font-size:16px;
+  }
+
+  .brand small{
+    font-size:8px;
+    letter-spacing:2px;
+  }
+
+  .logo{
+    width:48px;
+    height:48px;
+  }
+
+  .nav .btn{
+    padding:10px 13px;
+    font-size:11px;
+  }
+
+  .hero{
+    padding:30px 20px;
+    border-radius:25px;
+  }
+
+  .hero h2{
+    font-size:47px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .uid-row{
+    flex-direction:column;
+  }
+
+  .check{
+    width:100%;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .package{
+    padding:14px 9px;
+    border-radius:16px;
+  }
+
+  .package h3{
+    font-size:14px;
+  }
+
+  .price{
+    font-size:15px;
+    padding:8px 4px;
+  }
+
+  .diamond-icon{
+    font-size:30px;
+  }
+
+  .qty button{
+    width:36px;
+  }
+
+  .payment-box{
+    grid-template-columns:1fr;
+  }
+
+  .hero-buttons .btn{
+    flex:1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <div class="brand">
+      <div class="logo">OZZI</div>
+
+      <div>
+        <h1>OZZI DIAMONDS</h1>
+        <small>FREE FIRE TOP-UP STORE</small>
+      </div>
+    </div>
+
+    <button class="btn"
+      onclick="window.open(whatsappLink('Hello OZZI DIAMONDS, I want to Register / Login.'),'_blank')">
+      REGISTER / LOGIN
+    </button>
+
+  </div>
+</header>
+
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="badge">💎 PREMIUM FREE FIRE TOP-UP</div>
+
+    <h2>
+      OZZI<br>
+      <span>DIAMONDS</span>
+    </h2>
+
+    <p>
+      Fast, safe & instant Free Fire diamonds and membership
+      top-ups. Enter your UID and select your favourite package.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#packages" class="btn">
+        💎 BUY DIAMONDS
+      </a>
+
+      <button class="btn whatsapp"
+        onclick="window.open(whatsappLink('Hello OZZI DIAMONDS 👋 I need help with a Free Fire top-up.'),'_blank')">
+        💬 WHATSAPP
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- OFFER -->
+  <div class="offer">
+    ⚡ BIG OFFER
+    <span>FAST</span>
+    <span>SAFE</span>
+    <span>INSTANT</span>
+  </div>
+
+
+  <!-- UID -->
+  <h2 class="section-title">
+    🎮 <span>Free Fire</span> Player Details
+  </h2>
+
+  <section class="uid-card">
+
+    <label>ENTER YOUR USER ID</label>
+
+    <div class="uid-row">
+
+      <input
+        id="uid"
+        type="text"
+        inputmode="numeric"
+        placeholder="Enter Free Fire UID"
+      >
+
+      <button class="btn check" onclick="checkUID()">
+        CHECK USERNAME
+      </button>
+
+    </div>
+
+    <div id="uidResult"></div>
+
+    <p style="margin-top:12px;color:#8da8bc;font-size:13px">
+      Enter your correct Free Fire UID before placing your order.
+    </p>
+
+  </section>
+
+
+  <!-- MEMBERSHIP -->
+  <h2 class="section-title">
+    ⭐ <span>Top Selling</span> Membership
+  </h2>
+
+  <section class="grid">
+
+    <div class="package">
+      <div class="tag">BIG OFFER</div>
+      <div class="diamond-icon">💎</div>
+      <h3>WEEKLY LITE</h3>
+      <div class="price">Rs. 120</div>
+
+      <div class="qty">
+        <button onclick="changeQty('weeklyLite',-1)">−</button>
+        <input id="weeklyLite" value="0" readonly>
+        <button onclick="changeQty('weeklyLite',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="tag">BIG OFFER</div>
+      <div class="diamond-icon">💎</div>
+      <h3>WEEKLY</h3>
+      <div class="price">Rs. 580</div>
+
+      <div class="qty">
+        <button onclick="changeQty('weekly',-1)">−</button>
+        <input id="weekly" value="0" readonly>
+        <button onclick="changeQty('weekly',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="tag">BIG OFFER</div>
+      <div class="diamond-icon">💎</div>
+      <h3>MONTHLY</h3>
+      <div class="price">Rs. 2850</div>
+
+      <div class="qty">
+        <button onclick="changeQty('monthly',-1)">−</button>
+        <input id="monthly" value="0" readonly>
+        <button onclick="changeQty('monthly',1)">+</button>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- DIAMONDS -->
+  <h2 id="packages" class="section-title">
+    💎 <span>Diamond Packages</span>
+  </h2>
+
+  <section class="grid">
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 25</h3>
+      <div class="price">Rs. 100</div>
+      <div class="qty">
+        <button onclick="changeQty('d25',-1)">−</button>
+        <input id="d25" value="0" readonly>
+        <button onclick="changeQty('d25',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 100</h3>
+      <div class="price">Rs. 350</div>
+      <div class="qty">
+        <button onclick="changeQty('d100',-1)">−</button>
+        <input id="d100" value="0" readonly>
+        <button onclick="changeQty('d100',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 310</h3>
+      <div class="price">Rs. 1050</div>
+      <div class="qty">
+        <button onclick="changeQty('d310',-1)">−</button>
+        <input id="d310" value="0" readonly>
+        <button onclick="changeQty('d310',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 520</h3>
+      <div class="price">Rs. 1750</div>
+      <div class="qty">
+        <button onclick="changeQty('d520',-1)">−</button>
+        <input id="d520" value="0" readonly>
+        <button onclick="changeQty('d520',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 1060</h3>
+      <div class="price">Rs. 3400</div>
+      <div class="qty">
+        <button onclick="changeQty('d1060',-1)">−</button>
+        <input id="d1060" value="0" readonly>
+        <button onclick="changeQty('d1060',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 2180</h3>
+      <div class="price">Rs. 6800</div>
+      <div class="qty">
+        <button onclick="changeQty('d2180',-1)">−</button>
+        <input id="d2180" value="0" readonly>
+        <button onclick="changeQty('d2180',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 5600</h3>
+      <div class="price">Rs. 16800</div>
+      <div class="qty">
+        <button onclick="changeQty('d5600',-1)">−</button>
+        <input id="d5600" value="0" readonly>
+        <button onclick="changeQty('d5600',1)">+</button>
+      </div>
+    </div>
+
+
+    <div class="package">
+      <div class="diamond-icon">💎</div>
+      <h3>Diamond × 11500</h3>
+      <div class="price">Rs. 34000</div>
+      <div class="qty">
+        <button onclick="changeQty('d11500',-1)">−</button>
+        <input id="d11500" value="0" readonly>
+        <button onclick="changeQty('d11500',1)">+</button>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ORDER SUMMARY -->
+  <section class="order">
+
+    <h2>🛒 Order Summary</h2>
+
+    <div id="orderList" class="order-list">
+      <p style="color:#8299aa;margin-top:12px">
+        Select a package above.
+      </p>
+    </div>
+
+    <div class="total">
+      <span>TOTAL</span>
+      <strong id="total">Rs. 0</strong>
+    </div>
+
+    <button
+      class="btn"
+      style="width:100%;margin-top:20px"
+      onclick="sendOrder()">
+      📲 ORDER VIA WHATSAPP
+    </button>
+
+  </section>
+
+
+  <!-- PAYMENT -->
+  <section class="payment">
+
+    <h2>💳 Payment Methods</h2>
+
+    <div class="payment-box">
+
+      <div class="pay">
+        <b>💳 CARD</b>
+        Visa / Mastercard
+      </div>
+
+      <div class="pay">
+        <b>📱 LANKA QR</b>
+        Scan & Pay
+      </div>
+
+      <div class="pay">
+        <b>💬 WHATSAPP</b>
+        Order & Payment
+      </div>
+
+    </div>
+
+    <p style="color:#7ed9ff;margin-top:18px;text-align:center;font-size:13px">
+      Payment instructions will be provided through WhatsApp after your order.
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="footer-name">OZZI DIAMONDS</div>
+  <p style="margin-top:8px">
+    FREE FIRE TOP-UP STORE
+  </p>
+  <p style="margin-top:10px">
+    © 2026 OZZI DIAMONDS • Fast • Safe • Instant
+  </p>
+</footer>
+
+
+<a
+  class="float-wa"
+  href="https://wa.me/94703480810"
+  target="_blank"
+  aria-label="WhatsApp">
+  💬
+</a>
+
+
+<script>
+
+const WHATSAPP = "94703480810";
+
+const products = {
+
+  weeklyLite:{
+    name:"Weekly Lite",
+    price:120
+  },
+
+  weekly:{
+    name:"Weekly",
+    price:580
+  },
+
+  monthly:{
+    name:"Monthly",
+    price:2850
+  },
+
+  d25:{
+    name:"Diamond × 25",
+    price:100
+  },
+
+  d100:{
+    name:"Diamond × 100",
+    price:350
+  },
+
+  d310:{
+    name:"Diamond × 310",
+    price:1050
+  },
+
+  d520:{
+    name:"Diamond × 520",
+    price:1750
+  },
+
+  d1060:{
+    name:"Diamond × 1060",
+    price:3400
+  },
+
+  d2180:{
+    name:"Diamond × 2180",
+    price:6800
+  },
+
+  d5600:{
+    name:"Diamond × 5600",
+    price:16800
+  },
+
+  d11500:{
+    name:"Diamond × 11500",
+    price:34000
+  }
+
+};
+
+
+function changeQty(id, amount){
+
+  const input = document.getElementById(id);
+
+  if(!input) return;
+
+  let qty = parseInt(input.value) || 0;
+
+  qty += amount;
+
+  if(qty < 0){
+    qty = 0;
+  }
+
+  if(qty > 99){
+    qty = 99;
+  }
+
+  input.value = qty;
+
+  updateOrder();
+
+}
+
+
+function updateOrder(){
+
+  const list = document.getElementById("orderList");
+
+  let total = 0;
+
+  let html = "";
+
+  Object.keys(products).forEach(id => {
+
+    const input = document.getElementById(id);
+
+    if(!input) return;
+
+    const qty = parseInt(input.value) || 0;
+
+    if(qty > 0){
+
+      const product = products[id];
+
+      const subtotal = product.price * qty;
+
+      total += subtotal;
+
+      html += `
+        <div class="order-item">
+          <span>${product.name} × ${qty}</span>
+          <strong>Rs. ${subtotal.toLocaleString()}</strong>
+        </div>
+      `;
+
+    }
+
+  });
+
+
+  if(html === ""){
+
+    html = `
+      <p style="color:#8299aa">
+        Select a package above.
+      </p>
+    `;
+
+  }
+
+  list.innerHTML = html;
+
+  document.getElementById("total").textContent =
+    "Rs. " + total.toLocaleString();
+
+}
+
+
+function checkUID(){
+
+  const uid = document.getElementById("uid").value.trim();
+
+  const result = document.getElementById("uidResult");
+
+  if(uid.length < 5){
+
+    result.style.color = "#ff7676";
+
+    result.textContent =
+      "⚠️ Please enter a valid Free Fire UID.";
+
+    return;
+  }
+
+  result.style.color = "#64f7a2";
+
+  result.textContent =
+    "✓ UID entered successfully. Please select your package.";
+
+}
+
+
+function whatsappLink(message){
+
+  return "https://wa.me/" +
+    WHATSAPP +
+    "?text=" +
+    encodeURIComponent(message);
+
+}
+
+
+function sendOrder(){
+
+  const uid = document.getElementById("uid").value.trim();
+
+  if(uid.length < 5){
+
+    alert("Please enter your Free Fire UID first.");
+
+    document.getElementById("uid").focus();
+
+    return;
+
+  }
+
+
+  let message =
+    "🔥 OZZI DIAMONDS ORDER%0A%0A" +
+    "🎮 Free Fire UID: " + uid + "%0A%0A";
+
+  let total = 0;
+
+  let hasOrder = false;
+
+
+  Object.keys(products).forEach(id => {
+
+    const input = document.getElementById(id);
+
+    if(!input) return;
+
+    const qty = parseInt(input.value) || 0;
+
+    if(qty > 0){
+
+      hasOrder = true;
+
+      const product = products[id];
+
+      const subtotal = product.price * qty;
+
+      total += subtotal;
+
+      message +=
+        "💎 " + product.name +
+        " × " + qty +
+        " = Rs. " +
+        subtotal.toLocaleString() +
+        "%0A";
+
+    }
+
+  });
+
+
+  if(!hasOrder){
+
+    alert("Please select at least one package.");
+
+    return;
+
+  }
+
+
+  message +=
+    "%0A💰 TOTAL: Rs. " +
+    total.toLocaleString() +
+    "%0A%0A" +
+    "Please send me the payment instructions. Thank you!";
+
+
+  window.open(
+    "https://wa.me/" + WHATSAPP +
+    "?text=" + message,
+    "_blank"
+  );
+
+}
+
+
+updateOrder();
+
+</script>
+
+</body>
+</html>
