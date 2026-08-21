@@ -1095,7 +1095,38 @@ function sendOrder(){
 
 }
 
+// Load packages from Cloudflare API
+async function loadPackagesFromAPI() {
+  try {
+    const response = await fetch(
+      "https://ozzi-diamonds-api.oshadamilan2006.workers.dev/packages"
+    );
 
+    const data = await response.json();
+
+    if (!data.success || !Array.isArray(data.packages)) {
+      console.error("Packages API error:", data);
+      return;
+    }
+
+    console.log("Packages loaded:", data.packages);
+
+    data.packages.forEach(pkg => {
+      const product = products.find(p => p.name === pkg.name);
+
+      if (product) {
+        product.price = pkg.price;
+      }
+    });
+
+    updateOrder();
+
+  } catch (error) {
+    console.error("Failed to load packages:", error);
+  }
+}
+
+loadPackagesFromAPI();
 updateOrder();
 
 </script>
