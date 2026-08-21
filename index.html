@@ -1130,6 +1130,211 @@ loadPackagesFromAPI();
 updateOrder();
 
 </script>
+<!-- REGISTER / LOGIN POPUP -->
+<div id="authModal" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+">
+  <div style="
+    width:100%;
+    max-width:420px;
+    background:#07152b;
+    border:1px solid #00d9ff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 0 30px rgba(0,217,255,.35);
+    position:relative;
+  ">
 
+    <button onclick="closeAuth()" style="
+      position:absolute;
+      right:15px;
+      top:12px;
+      background:none;
+      border:0;
+      color:white;
+      font-size:28px;
+      cursor:pointer;
+    ">×</button>
+
+    <h2 style="text-align:center;color:#00d9ff;margin-bottom:8px;">
+      OZZI DIAMONDS
+    </h2>
+
+    <p style="text-align:center;color:#aaa;margin-bottom:20px;">
+      Register / Login
+    </p>
+
+    <div style="display:flex;gap:10px;margin-bottom:20px;">
+      <button id="registerTab" onclick="showRegister()" style="
+        flex:1;
+        padding:12px;
+        border:0;
+        border-radius:10px;
+        background:#8b2be2;
+        color:white;
+        font-weight:bold;
+      ">REGISTER</button>
+
+      <button id="loginTab" onclick="showLogin()" style="
+        flex:1;
+        padding:12px;
+        border:0;
+        border-radius:10px;
+        background:#222b45;
+        color:white;
+        font-weight:bold;
+      ">LOGIN</button>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="registerForm">
+
+      <input id="regName"
+        type="text"
+        placeholder="Full Name"
+        style="width:100%;padding:14px;margin-bottom:12px;border-radius:10px;border:1px solid #334;color:white;background:#101b32;">
+
+      <input id="regUid"
+        type="text"
+        placeholder="Free Fire UID"
+        style="width:100%;padding:14px;margin-bottom:12px;border-radius:10px;border:1px solid #334;color:white;background:#101b32;">
+
+      <input id="regPhone"
+        type="tel"
+        placeholder="WhatsApp Number"
+        style="width:100%;padding:14px;margin-bottom:12px;border-radius:10px;border:1px solid #334;color:white;background:#101b32;">
+
+      <input id="regPassword"
+        type="password"
+        placeholder="Password"
+        style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:1px solid #334;color:white;background:#101b32;">
+
+      <button onclick="registerUser()" style="
+        width:100%;
+        padding:14px;
+        border:0;
+        border-radius:12px;
+        background:linear-gradient(90deg,#00c6ff,#8b2be2);
+        color:white;
+        font-size:16px;
+        font-weight:bold;
+      ">
+        CREATE ACCOUNT
+      </button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="loginForm" style="display:none;">
+
+      <input id="loginPhone"
+        type="tel"
+        placeholder="WhatsApp Number"
+        style="width:100%;padding:14px;margin-bottom:12px;border-radius:10px;border:1px solid #334;color:white;background:#101b32;">
+
+      <input id="loginPassword"
+        type="password"
+        placeholder="Password"
+        style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:1px solid #334;color:white;background:#101b32;">
+
+      <button onclick="loginUser()" style="
+        width:100%;
+        padding:14px;
+        border:0;
+        border-radius:12px;
+        background:linear-gradient(90deg,#00c6ff,#8b2be2);
+        color:white;
+        font-size:16px;
+        font-weight:bold;
+      ">
+        LOGIN
+      </button>
+    </div>
+
+    <p id="authMessage"
+       style="text-align:center;margin-top:15px;color:#00d9ff;">
+    </p>
+
+  </div>
+</div>
+
+<script>
+function openAuth(){
+  document.getElementById("authModal").style.display="flex";
+  showRegister();
+}
+
+function closeAuth(){
+  document.getElementById("authModal").style.display="none";
+}
+
+function showRegister(){
+  document.getElementById("registerForm").style.display="block";
+  document.getElementById("loginForm").style.display="none";
+
+  document.getElementById("registerTab").style.background="#8b2be2";
+  document.getElementById("loginTab").style.background="#222b45";
+}
+
+function showLogin(){
+  document.getElementById("registerForm").style.display="none";
+  document.getElementById("loginForm").style.display="block";
+
+  document.getElementById("registerTab").style.background="#222b45";
+  document.getElementById("loginTab").style.background="#8b2be2";
+}
+
+async function registerUser(){
+
+  const name = document.getElementById("regName").value.trim();
+  const uid = document.getElementById("regUid").value.trim();
+  const phone = document.getElementById("regPhone").value.trim();
+  const password = document.getElementById("regPassword").value;
+
+  const msg = document.getElementById("authMessage");
+
+  if(!name || !uid || !phone || !password){
+    msg.textContent="Please fill all fields.";
+    return;
+  }
+
+  msg.textContent="Creating account...";
+
+  /*
+    ඊළඟ පියවරේ මෙතනට Cloudflare
+    registration API එක connect කරමු.
+  */
+
+  msg.textContent="Registration form is working!";
+}
+
+async function loginUser(){
+
+  const phone = document.getElementById("loginPhone").value.trim();
+  const password = document.getElementById("loginPassword").value;
+
+  const msg = document.getElementById("authMessage");
+
+  if(!phone || !password){
+    msg.textContent="Please enter phone and password.";
+    return;
+  }
+
+  msg.textContent="Logging in...";
+
+  /*
+    ඊළඟ පියවරේ මෙතනට Cloudflare
+    login API එක connect කරමු.
+  */
+
+  msg.textContent="Login form is working!";
+}
+</script>
 </body>
 </html>
