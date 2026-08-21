@@ -7,65 +7,70 @@
 <title>OZZI DIAMONDS | Free Fire Top-Up</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#070b18;--card:#10182b;--blue:#00bfff;--purple:#7c4dff;--text:#fff;--muted:#9aa8c7;--line:rgba(255,255,255,.09)}
+:root{--bg:#070b18;--card:#111a30;--blue:#00bfff;--purple:#7c4dff;--text:#fff;--muted:#9aa8c7;--line:rgba(255,255,255,.1)}
 body{font-family:Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 10% 0%,#07345a55,transparent 30%),radial-gradient(circle at 90% 10%,#5424a855,transparent 30%),var(--bg);min-height:100vh}
 button,input{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
 .container{width:min(1100px,92%);margin:auto}
-header{position:sticky;top:0;z-index:50;background:#070b18dd;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-nav{min-height:70px;display:flex;align-items:center;justify-content:space-between}
+header{position:sticky;top:0;z-index:50;background:#070b18e8;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
 .brand{display:flex;align-items:center;gap:10px}.logo{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple));font-size:22px}
 .brand b{font-size:17px;letter-spacing:1px}.brand small{display:block;color:var(--blue);font-size:10px;margin-top:3px}
-.links{display:flex;gap:22px;color:var(--muted);font-size:14px}.links a:hover{color:#fff}
-.hero{text-align:center;padding:65px 0 40px}.badge{display:inline-block;border:1px solid #00bfff55;background:#00bfff12;color:#82dcff;padding:8px 13px;border-radius:99px;font-size:12px}
+.nav-actions{display:flex;align-items:center;gap:9px}.links{display:flex;gap:20px;color:var(--muted);font-size:14px}.links a:hover{color:#fff}
+.auth-btn{border:1px solid #00bfff66;background:#00bfff12;color:#7bdcff;padding:10px 13px;border-radius:10px;font-weight:800;font-size:12px}
+.hero{text-align:center;padding:60px 0 40px}.badge{display:inline-block;border:1px solid #00bfff55;background:#00bfff12;color:#82dcff;padding:8px 13px;border-radius:99px;font-size:12px}
 .hero h1{font-size:clamp(38px,7vw,70px);line-height:1.05;margin:17px 0 12px}.grad{background:linear-gradient(90deg,#fff,#6ddcff,#9d83ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:var(--muted);line-height:1.7;max-width:650px;margin:auto}
-.actions{margin-top:25px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hero p{color:var(--muted);line-height:1.7;max-width:650px;margin:auto}.actions{margin-top:25px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .btn{border:0;border-radius:12px;padding:13px 20px;font-weight:800}.primary{background:linear-gradient(135deg,#00c6ff,#6c70ff);color:#00101a}.secondary{background:#151e34;color:#fff;border:1px solid var(--line)}
 section{padding:35px 0 65px}.title{text-align:center;margin-bottom:25px}.title h2{font-size:28px}.title p{color:var(--muted);font-size:13px;margin-top:7px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.card{background:linear-gradient(180deg,#151f36,#10182b);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative;transition:.2s}
-.card:hover,.card.selected{transform:translateY(-2px);border-color:#00bfff88;box-shadow:0 10px 35px #00bfff12}
-.card .tag{position:absolute;right:13px;top:13px;background:var(--purple);font-size:10px;padding:5px 8px;border-radius:99px;font-weight:800}
-.card h3{font-size:21px}.card .price{font-size:20px;font-weight:900;margin-top:8px}.card small{color:var(--muted);display:block;margin-top:5px}.card button{width:100%;margin-top:16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(180deg,#151f36,#10182b);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative;transition:.2s}
+.card.selected{border-color:#00bfff99;box-shadow:0 10px 35px #00bfff14}.card h3{font-size:21px}.card .price{font-size:20px;font-weight:900;margin-top:8px}.card small{color:var(--muted);display:block;margin-top:5px}
+.card button{width:100%;margin-top:16px}.qty{display:flex;align-items:center;justify-content:space-between;margin-top:16px;background:#091123;border:1px solid #293753;border-radius:11px;overflow:hidden}
+.qty button{width:46px;height:42px;border:0;background:#17233d;color:#fff;font-size:23px}.qty span{font-weight:900;min-width:50px;text-align:center}
 .order{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.panel{background:#10182be8;border:1px solid var(--line);border-radius:19px;padding:22px}.panel h3{margin-bottom:17px}
 label{display:block;font-size:13px;color:#ccd6ed;margin-bottom:7px}.field{margin-bottom:15px}
 input{width:100%;padding:14px;border-radius:11px;border:1px solid #293753;background:#091123;color:#fff;outline:none}input:focus{border-color:var(--blue)}
-.summary{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted)}.summary strong{color:#fff;text-align:right}
-.total{font-size:20px;color:#fff!important}.full{width:100%;margin-top:15px}
+.summary{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted)}.summary strong{color:#fff;text-align:right}.total{font-size:20px;color:#fff!important}.full{width:100%;margin-top:15px}
 .note{margin-top:15px;padding:12px;border-radius:11px;background:#20d47a0d;border:1px solid #20d47a33;color:#a9f3cc;font-size:12px;line-height:1.5}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:20px}.num{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#00bfff18;color:#72dcff;font-weight:900;margin-bottom:12px}.step p{color:var(--muted);font-size:13px;line-height:1.6;margin-top:7px}
 footer{text-align:center;border-top:1px solid var(--line);padding:27px;color:var(--muted);font-size:12px}
 .toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;background:#16233d;border:1px solid #00bfff55;padding:12px 16px;border-radius:11px;transition:.2s;z-index:100}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:800px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.order{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding-top:45px}.panel{padding:18px}}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:200;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}
+.modal-box{width:min(420px,100%);background:#10182b;border:1px solid #00bfff66;border-radius:20px;padding:22px;position:relative;box-shadow:0 20px 70px #000}
+.close{position:absolute;right:13px;top:10px;background:none;border:0;color:#fff;font-size:27px}.tabs{display:flex;gap:8px;margin:18px 0}.tab{flex:1;border:0;border-radius:10px;padding:11px;background:#18233c;color:#fff;font-weight:800}.tab.active{background:linear-gradient(135deg,#00c6ff,#6c70ff);color:#00101a}.auth-form{display:none}.auth-form.active{display:block}.auth-message{text-align:center;color:#7bdcff;font-size:13px;margin-top:12px;min-height:18px}
+@media(max-width:850px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.order{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.nav-actions .links{display:none}.auth-btn{padding:9px;font-size:11px}.hero{padding-top:45px}.panel{padding:18px}}
 </style>
 </head>
 <body>
+
 <header><div class="container"><nav>
 <a class="brand" href="#"><div class="logo">💎</div><div><b>OZZI DIAMONDS</b><small>FREE FIRE TOP-UP</small></div></a>
+<div class="nav-actions">
 <div class="links"><a href="#packages">Packages</a><a href="#order">Order</a><a href="#how">How It Works</a></div>
+<button class="auth-btn" onclick="openAuth()">REGISTER / LOGIN</button>
+</div>
 </nav></div></header>
 
 <main>
 <section class="hero"><div class="container">
 <span class="badge">⚡ FAST & SIMPLE FREE FIRE TOP-UP</span>
 <h1>Top Up Your <span class="grad">Free Fire</span> Account</h1>
-<p>Choose your package, enter your Free Fire UID and review your order. No automatic WhatsApp redirect.</p>
+<p>Choose Diamonds or a membership package, enter your Player UID and review your order.</p>
 <div class="actions"><a class="btn primary" href="#packages">View Packages</a><a class="btn secondary" href="#order">Place Order</a></div>
 </div></section>
 
 <section id="packages"><div class="container">
-<div class="title"><h2>Diamond Packages</h2><p>Select the package you need.</p></div>
+<div class="title"><h2>Diamond Packages</h2><p>Choose your package and quantity.</p></div>
 <div class="grid" id="diamonds"></div>
 </div></section>
 
 <section><div class="container">
-<div class="title"><h2>Weekly & Monthly</h2><p>Membership packages</p></div>
+<div class="title"><h2>Weekly & Monthly</h2><p>Membership packages.</p></div>
 <div class="grid" id="memberships"></div>
 </div></section>
 
 <section id="order"><div class="container">
-<div class="title"><h2>Place Your Order</h2><p>Review your package before continuing.</p></div>
+<div class="title"><h2>Place Your Order</h2><p>Check your details before continuing.</p></div>
 <div class="order">
 <div class="panel">
 <h3>Player Details</h3>
@@ -76,64 +81,88 @@ footer{text-align:center;border-top:1px solid var(--line);padding:27px;color:var
 <div class="panel">
 <h3>Order Summary</h3>
 <div class="summary"><span>Package</span><strong id="sPackage">None selected</strong></div>
+<div class="summary"><span>Quantity</span><strong id="sQty">0</strong></div>
 <div class="summary"><span>UID</span><strong id="sUid">—</strong></div>
 <div class="summary"><span>Total</span><strong class="total" id="sPrice">Rs. 0</strong></div>
-<div class="note">This is the clean front-end version. Payment processing and backend order saving will be connected separately.</div>
+<div class="note">Front-end demo: no payment is processed and no order is sent to WhatsApp automatically.</div>
 <button class="btn secondary full" onclick="copyOrder()">Copy Order Details</button>
 </div>
 </div></div></section>
 
 <section id="how"><div class="container">
-<div class="title"><h2>How It Works</h2><p>Simple 3-step order flow</p></div>
+<div class="title"><h2>How It Works</h2><p>Simple 3-step order flow.</p></div>
 <div class="steps">
-<div class="step"><div class="num">1</div><h3>Choose Package</h3><p>Select Diamonds or Weekly/Monthly membership.</p></div>
+<div class="step"><div class="num">1</div><h3>Choose Package</h3><p>Select Diamonds or Weekly/Monthly.</p></div>
 <div class="step"><div class="num">2</div><h3>Enter UID</h3><p>Enter the correct Free Fire Player UID.</p></div>
-<div class="step"><div class="num">3</div><h3>Confirm</h3><p>Review the package, UID and price before payment.</p></div>
+<div class="step"><div class="num">3</div><h3>Confirm</h3><p>Review package, quantity, UID and price.</p></div>
 </div></div></section>
 </main>
+
 <footer>© 2026 OZZI DIAMONDS • Free Fire Top-Up</footer>
+
+<div class="modal" id="authModal" onclick="if(event.target===this)closeAuth()">
+<div class="modal-box">
+<button class="close" onclick="closeAuth()">×</button>
+<h2 style="text-align:center">OZZI DIAMONDS</h2>
+<p style="text-align:center;color:#9aa8c7;margin-top:6px">Account</p>
+<div class="tabs">
+<button id="registerTab" class="tab active" onclick="showRegister()">REGISTER</button>
+<button id="loginTab" class="tab" onclick="showLogin()">LOGIN</button>
+</div>
+<div id="registerForm" class="auth-form active">
+<div class="field"><label>Full Name</label><input id="regName" placeholder="Your name"></div>
+<div class="field"><label>WhatsApp Number</label><input id="regPhone" inputmode="tel" placeholder="+94 7X XXX XXXX"></div>
+<div class="field"><label>Password</label><input id="regPass" type="password" placeholder="Create password"></div>
+<button class="btn primary full" onclick="registerUser()">CREATE ACCOUNT</button>
+</div>
+<div id="loginForm" class="auth-form">
+<div class="field"><label>WhatsApp Number</label><input id="loginPhone" inputmode="tel" placeholder="+94 7X XXX XXXX"></div>
+<div class="field"><label>Password</label><input id="loginPass" type="password" placeholder="Password"></div>
+<button class="btn primary full" onclick="loginUser()">LOGIN</button>
+</div>
+<div class="auth-message" id="authMessage"></div>
+</div></div>
+
 <div class="toast" id="toast"></div>
 
 <script>
-const diamondPackages=[
- {name:"25 Diamonds",price:100},
- {name:"100 Diamonds",price:350},
- {name:"310 Diamonds",price:1050},
- {name:"520 Diamonds",price:1750},
- {name:"1060 Diamonds",price:3400},
- {name:"2180 Diamonds",price:6800}
+const diamonds=[
+{name:"25 Diamonds",price:100},{name:"100 Diamonds",price:350},{name:"310 Diamonds",price:1050},
+{name:"520 Diamonds",price:1750},{name:"1060 Diamonds",price:3400},{name:"2180 Diamonds",price:6800}
 ];
-const membershipPackages=[
- {name:"Weekly Lite",price:120},
- {name:"Weekly",price:580},
- {name:"Monthly",price:2850}
+const memberships=[
+{name:"Weekly Lite",price:120},{name:"Weekly",price:580},{name:"Monthly",price:2850}
 ];
-let selected=null;
+let selected=null,qty=1;
 
 function render(list,id){
  const box=document.getElementById(id);
  list.forEach((p,i)=>{
-  const el=document.createElement("div");
-  el.className="card";
-  el.id=id+i;
-  el.innerHTML=`<h3>${p.name}</h3><div class="price">Rs. ${p.price.toLocaleString()}</div><small>OZZI DIAMONDS</small><button class="btn secondary" onclick="selectPackage('${id}',${i})">Select Package</button>`;
+  const el=document.createElement("div");el.className="card";el.id=id+i;
+  el.innerHTML=`<h3>${p.name}</h3><div class="price">Rs. ${p.price.toLocaleString()}</div><small>OZZI DIAMONDS</small>
+  <div class="qty"><button onclick="changeQty('${id}',${i},-1)">−</button><span id="q-${id}-${i}">1</span><button onclick="changeQty('${id}',${i},1)">+</button></div>
+  <button class="btn secondary" onclick="selectPackage('${id}',${i})">Select Package</button>`;
   box.appendChild(el);
  });
 }
-render(diamondPackages,"diamonds");
-render(membershipPackages,"memberships");
+render(diamonds,"diamonds");render(memberships,"memberships");
 
+function changeQty(type,index,delta){
+ const key="q-"+type+"-"+index,el=document.getElementById(key);
+ let n=Math.max(1,Math.min(99,Number(el.textContent)+delta));el.textContent=n;
+ if(selected && selected.key===type+index){qty=n;updateSummary()}
+}
 function selectPackage(type,index){
- selected=(type==="diamonds"?diamondPackages:membershipPackages)[index];
+ selected={...((type==="diamonds"?diamonds:memberships)[index]),key:type+index};
+ qty=Number(document.getElementById("q-"+type+"-"+index).textContent);
  document.querySelectorAll(".card").forEach(x=>x.classList.remove("selected"));
  document.getElementById(type+index).classList.add("selected");
- updateSummary();
- document.getElementById("order").scrollIntoView({behavior:"smooth"});
- showToast(selected.name+" selected ✓");
+ updateSummary();document.getElementById("order").scrollIntoView({behavior:"smooth"});showToast(selected.name+" selected ✓");
 }
 function updateSummary(){
  document.getElementById("sPackage").textContent=selected?selected.name:"None selected";
- document.getElementById("sPrice").textContent=selected?"Rs. "+selected.price.toLocaleString():"Rs. 0";
+ document.getElementById("sQty").textContent=selected?qty:"0";
+ document.getElementById("sPrice").textContent=selected?"Rs. "+(selected.price*qty).toLocaleString():"Rs. 0";
  document.getElementById("sUid").textContent=document.getElementById("uid").value.trim()||"—";
 }
 document.getElementById("uid").addEventListener("input",updateSummary);
@@ -147,16 +176,30 @@ function placeOrder(){
 }
 async function copyOrder(){
  if(!selected){showToast("Select a package first.");return}
- const uid=document.getElementById("uid").value.trim()||"Not entered";
- const name=document.getElementById("name").value.trim()||"Not entered";
- const text=`OZZI DIAMONDS ORDER\nPackage: ${selected.name}\nPrice: Rs. ${selected.price}\nPlayer UID: ${uid}\nPlayer Name: ${name}`;
+ const uid=document.getElementById("uid").value.trim()||"Not entered",name=document.getElementById("name").value.trim()||"Not entered";
+ const text=`OZZI DIAMONDS ORDER\nPackage: ${selected.name}\nQuantity: ${qty}\nPrice: Rs. ${selected.price*qty}\nPlayer UID: ${uid}\nPlayer Name: ${name}`;
  try{await navigator.clipboard.writeText(text);showToast("Order details copied ✓")}catch(e){showToast("Copy unavailable")}
 }
-let timer;
-function showToast(msg){
- const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
- clearTimeout(timer);timer=setTimeout(()=>t.classList.remove("show"),2200);
+function openAuth(){document.getElementById("authModal").classList.add("show");showRegister()}
+function closeAuth(){document.getElementById("authModal").classList.remove("show")}
+function showRegister(){
+ document.getElementById("registerForm").classList.add("active");document.getElementById("loginForm").classList.remove("active");
+ document.getElementById("registerTab").classList.add("active");document.getElementById("loginTab").classList.remove("active");document.getElementById("authMessage").textContent=""
 }
+function showLogin(){
+ document.getElementById("registerForm").classList.remove("active");document.getElementById("loginForm").classList.add("active");
+ document.getElementById("registerTab").classList.remove("active");document.getElementById("loginTab").classList.add("active");document.getElementById("authMessage").textContent=""
+}
+function registerUser(){
+ const n=document.getElementById("regName").value.trim(),p=document.getElementById("regPhone").value.trim(),pw=document.getElementById("regPass").value;
+ document.getElementById("authMessage").textContent=n&&p&&pw?"Registration form ready. Backend will be connected next.":"Please fill all fields.";
+}
+function loginUser(){
+ const p=document.getElementById("loginPhone").value.trim(),pw=document.getElementById("loginPass").value;
+ document.getElementById("authMessage").textContent=p&&pw?"Login form ready. Backend will be connected next.":"Please enter your number and password.";
+}
+let timer;
+function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(timer);timer=setTimeout(()=>t.classList.remove("show"),2200)}
 </script>
 </body>
 </html>
