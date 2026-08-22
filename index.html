@@ -201,5 +201,110 @@ function loginUser(){
 let timer;
 function showToast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(timer);timer=setTimeout(()=>t.classList.remove("show"),2200)}
 </script>
+ <div id="playerVerification" style="margin:20px 0;padding:15px;border:1px solid #ddd;border-radius:12px;">
+  <h3>Free Fire SG Player Verification</h3>
+
+  <input
+    id="playerId"
+    type="text"  
+    inputmode="numeric"
+    placeholder="Enter Player ID"
+    style="width:100%;padding:12px;margin-bottom:10px;"
+  >
+
+  <button
+    id="verifyPlayerBtn"
+    type="button"
+    style="padding:12px 20px;"
+  >
+    Verify Player
+  </button>
+
+  <p id="verifyStatus"></p>
+
+  <div id="playerResult" style="display:none;">
+    <strong>Player Name:</strong>
+    <span id="playerName"></span>
+  </div>
+</div>
+
+<script>
+const VERIFY_API =
+  "https://ozzi-diamonds-api.oshadamilan2006.workers.dev/verify-player";
+
+document
+  .getElementById("verifyPlayerBtn")
+  .addEventListener("click", async () => {
+
+    const playerId =
+      document.getElementById("playerId").value.trim();
+
+    const status =
+      document.getElementById("verifyStatus");
+
+    const result =
+      document.getElementById("playerResult");
+
+    const playerName =
+      document.getElementById("playerName");
+
+    if (!playerId) {
+      status.textContent = "Please enter your Player ID.";
+      result.style.display = "none";
+      return;
+    }
+
+    status.textContent = "Checking Player ID...";
+    result.style.display = "none";
+
+    try {
+      const response = await fetch(VERIFY_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          user_id: playerId,
+          validation_code: "freefire_sg"
+        })
+      });
+
+      const data = await response.json();
+
+      console.log("FlashTopup response:", data);
+
+      if (!data.success) {
+        status.textContent =
+          data.error?.message ||
+          data.message ||
+          "Player verification failed.";
+        return;
+      }
+
+      const player =
+        data.data || data.result || data;
+
+      const name =
+        player.nickname ||
+        player.player_name ||
+        player.name ||
+        player.username;
+
+      if (name) {
+        playerName.textContent = name;
+        result.style.display = "block";
+        status.textContent = "Player verified successfully.";
+      } else {
+        status.textContent =
+          "Player verified, but Player Name was not returned.";
+      }
+
+    } catch (error) {
+      console.error(error);
+      status.textContent =
+        "Unable to connect to verification server.";
+    }
+  });
+ </script>
 </body>
 </html>
